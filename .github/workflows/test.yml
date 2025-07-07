@@ -145,4 +145,5 @@ jobs:
             php-stubs/wordpress-stubs:^6.6
 
       - name: Run Psalm SAST
-        run: ~/.composer/vendor/bin/psalm --output-format=github
+        run: ~/.composer/vendor/bin/psalm --root=. --output-format=github
+
