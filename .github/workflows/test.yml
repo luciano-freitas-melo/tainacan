@@ -138,9 +138,14 @@ jobs:
           php-version: '8.3'
           coverage: none
 
-      - name: Install/Update Composer dependencies
-        run: composer update --prefer-dist --no-progress --no-interaction
+      - name: Install global Psalm + WordPress plugin + stubs
+        run: |
+          composer global require --no-progress --no-interaction \
+            vimeo/psalm:^5.24 \
+            php-stubs/wordpress-stubs:^6.6 \
+            weirdan/psalm-plugin-wordpress:^3.0
+
+          ~/.composer/vendor/bin/psalm-plugin enable weirdan/psalm-plugin-wordpress
 
       - name: Run Psalm SAST
-        run: ./vendor/bin/psalm --output-format=github
-        continue-on-error: true
+        run: ~/.composer/vendor/bin/psalm --output-format=github

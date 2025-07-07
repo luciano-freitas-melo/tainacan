@@ -2,12 +2,6 @@
     "name": "tainacan/tainacan",
     "description": "Transforme seu site wordpress em um repositório digital.",
     "type": "wordpress-plugin",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/weirdan/psalm-plugin-wordpress"
-        }
-    ],
     "require": {
         "respect/validation": "^1.1",
         "smalot/pdfparser": "*",
@@ -17,12 +11,9 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.2 || ^3.0.2",
-        "yoast/phpunit-polyfills": "^1.1.0",
-        "vimeo/psalm": "^5.24",
-        "weirdan/psalm-plugin-wordpress": "^3.0",
-        "php-stubs/wordpress-stubs": "^6.6"
+        "yoast/phpunit-polyfills": "^1.1.0"
     },
-    "prefer-stable": true,
+    "prefer-stable" : true,
     "minimum-stability": "dev",
     "config": {
         "vendor-dir": "src/vendor",
@@ -30,6 +21,6 @@
     },
     "scripts": {
         "post-install-cmd": "\"src/vendor/bin/phpcs\" --config-set installed_paths src/vendor/phpcompatibility/php-compatibility",
-        "post-update-cmd": "\"src/vendor/bin/phpcs\" --config-set installed_paths src/vendor/phpcompatibility/php-compatibility"
+        "post-update-cmd" : "\"src/vendor/bin/phpcs\" --config-set installed_paths src/vendor/phpcompatibility/php-compatibility"
     }
 }
