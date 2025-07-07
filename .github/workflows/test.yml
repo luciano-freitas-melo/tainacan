@@ -138,12 +138,9 @@ jobs:
           php-version: '8.3'
           coverage: none
 
-      - name: Install global Psalm + WordPress stubs
-        run: |
-          composer global require --no-progress --no-interaction \
-            vimeo/psalm:^5.24 \
-            php-stubs/wordpress-stubs:^6.6
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-interaction
 
       - name: Run Psalm SAST
-        run: ~/.composer/vendor/bin/psalm --root=. --output-format=github
+        run: ./src/vendor/bin/psalm --output-format=github
 
