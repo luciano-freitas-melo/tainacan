@@ -142,5 +142,5 @@ jobs:
         run: composer install --no-progress --no-interaction
 
       - name: Run Psalm SAST
-        run: ./src/vendor/bin/psalm --output-format=github --issue-type=TaintedInput --show-info=true
+        run: ./src/vendor/bin/psalm --output-format=github --show-info=true
 
