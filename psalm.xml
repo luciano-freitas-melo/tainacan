@@ -15,8 +15,7 @@
     </ignoreFiles>
   </projectFiles>
 
-  <!-- Remova plugins desnecessários -->
   <plugins>
-    <!-- sem plugins no momento -->
+    <pluginClass class="Psalm\Internal\Plugin\TaintPlugin" />
   </plugins>
 </psalm>
